@@ -1,0 +1,151 @@
+:root {
+  --accent-color: #3880d2;
+}
+
+.categorias-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.categoria-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.categoria-icon {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.categoria-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-nombre {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.categoria-descripcion {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.categoria-stats {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.libros-count {
+  display: inline-block;
+  background: #f0f4ff;
+  color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.resumen-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resumen-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.resumen-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.resumen-content p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.resumen-content strong {
+  font-weight: 600;
+  color: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .categorias-container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .categorias-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .resumen-section {
+    padding: 2rem 1rem;
+  }
+
+  .resumen-section h2 {
+    font-size: 1.5rem;
+  }
+}

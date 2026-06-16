@@ -1,0 +1,93 @@
+<div class="contacto-container">
+  <div class="header">
+    <h1> Contacto</h1>
+    <p>¿Preguntas o sugerencias? Nos encantaría escucharte</p>
+  </div>
+
+  <div class="contacto-content">
+    <!-- Información de contacto -->
+    <div class="info-section">
+      <h2>Información de Contacto</h2>
+      <div class="info-grid">
+        <div *ngFor="let info of contactInfo" class="info-card">
+          <div class="info-icono">{{ info.icono }}</div>
+          <div class="info-detalle">
+            <h3>{{ info.titulo }}</h3>
+            <p>{{ info.contenido }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="form-section">
+      <h2>Envíanos un Mensaje</h2>
+      
+      <div *ngIf="enviado" class="mensaje-exito">
+        ¡Gracias por tu mensaje! Nos pondremos en contacto pronto.
+      </div>
+
+      <form (ngSubmit)="enviarFormulario()" class="contacto-form">
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input 
+            type="text" 
+            id="nombre" 
+            [(ngModel)]="formulario.nombre"
+            name="nombre"
+            placeholder="Tu nombre completo"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input 
+            type="email" 
+            id="email" 
+            [(ngModel)]="formulario.email"
+            name="email"
+            placeholder="tu.email@ejemplo.com"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto *</label>
+          <input 
+            type="text" 
+            id="asunto" 
+            [(ngModel)]="formulario.asunto"
+            name="asunto"
+            placeholder="¿Cuál es tu consulta?"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea 
+            id="mensaje" 
+            [(ngModel)]="formulario.mensaje"
+            name="mensaje"
+            placeholder="Cuéntanos más detalles..."
+            rows="6"
+            required></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+          <button type="button" (click)="limpiarFormulario()" class="btn-limpiar">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Redes sociales -->
+  <div class="social-section">
+    <h2>Síguenos en Redes Sociales</h2>
+    <div class="social-links">
+      <a href="#" class="social-link">Facebook</a>
+      <a href="#" class="social-link"> Twitter</a>
+      <a href="#" class="social-link"> Instagram</a>
+      <a href="#" class="social-link"> LinkedIn</a>
+    </div>
+  </div>
+</div>

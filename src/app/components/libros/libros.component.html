@@ -1,0 +1,41 @@
+<div class="libros-container">
+  <div class="header">
+    <h1>📚 Catálogo de Libros</h1>
+    <p>Descubre nuestra colección de libros clásicos y modernos</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-number">{{ libros.length }}</span>
+      <span class="stat-label">Libros Totales</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ obtenerLibrosDisponibles() }}</span>
+      <span class="stat-label">Disponibles</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ obtenerLibrosPrestados() }}</span>
+      <span class="stat-label">Prestados</span>
+    </div>
+  </div>
+
+  <div class="libros-grid">
+    <div *ngFor="let libro of libros" class="libro-card" [ngClass]="obtenerClaseDisponibilidad(libro.disponible)">
+      <div class="libro-imagen">{{ libro.imagen }}</div>
+      <div class="libro-info">
+        <h2 class="libro-titulo">{{ libro.titulo }}</h2>
+        <p class="libro-autor">por {{ libro.autor }}</p>
+        <div class="libro-meta">
+          <span class="categoria">{{ libro.categoria }}</span>
+          <span class="anio">{{ libro.anio }}</span>
+        </div>
+        <p class="libro-descripcion">{{ libro.descripcion }}</p>
+        <div class="libro-footer">
+          <span class="disponibilidad" [ngClass]="{ 'disponible': libro.disponible, 'no-disponible': !libro.disponible }">
+            {{ obtenerTextoDisponibilidad(libro.disponible) }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="home-container">
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>{{ title }}</h1>
+      <p class="hero-description">{{ description }}</p>
+      <div class="hero-image">
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="features-grid">
+      <div *ngFor="let feature of features" class="feature-card">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>¡Bienvenido a nuestra biblioteca!</h2>
+    <p>Explora nuestras secciones: Libros, Categorías y más información en Contacto.</p>
+  </div>
+</div>
