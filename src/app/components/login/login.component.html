@@ -1,0 +1,74 @@
+<div class="login-container">
+  <div class="login-box">
+    <h1 class="login-title">Biblioteca Digital</h1>
+    
+    <!-- Mensaje de error -->
+    <div *ngIf="loginError" class="error-message">
+      <span class="error-icon">⚠</span>
+      {{ loginError }}
+    </div>
+
+    <!-- Formulario de login -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Campo Email -->
+      <div class="form-group">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+          placeholder="Ingresa tu correo"
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">El correo es obligatorio</div>
+          <div *ngIf="f['email'].errors['email']">Formato de correo inválido</div>
+        </div>
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="form-group">
+        <label for="password" class="form-label">Contraseña</label>
+        <div class="password-input-wrapper">
+          <input
+            id="password"
+            [type]="getPasswordInputType()"
+            formControlName="password"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+            placeholder="Mínimo 6 caracteres"
+          />
+          <button
+            type="button"
+            class="toggle-password-btn"
+            (click)="togglePasswordVisibility()"
+            tabindex="-1"
+          >
+            {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+          </button>
+        </div>
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">La contraseña es obligatoria</div>
+          <div *ngIf="f['password'].errors['minlength']">La contraseña debe tener mínimo {{ f['password'].errors['minlength']['requiredLength'] }} caracteres</div>
+        </div>
+      </div>
+
+      <!-- Botón Submit -->
+      <button
+        type="submit"
+        class="btn-login"
+        [disabled]="submitted && loginForm.invalid"
+      >
+        Iniciar Sesión
+      </button>
+    </form>
+
+    <!-- Información de ayuda -->
+    <div class="help-info">
+      <p class="help-title">Credenciales de prueba:</p>
+      <p class="help-text">📧 adminKook&#64;gmail.com</p>
+      <p class="help-text">🔐 Sum9701</p>
+    </div>
+  </div>
+</div>

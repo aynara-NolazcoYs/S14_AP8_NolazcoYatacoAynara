@@ -10,8 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LibrosComponent } from './components/libros/libros.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { LoginComponent } from './components/login/login.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     LibrosComponent,
     CategoriasComponent,
-    ContactoComponent
+    ContactoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
