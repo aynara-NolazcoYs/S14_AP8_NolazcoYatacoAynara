@@ -25,7 +25,7 @@ export class LibrosComponent {
       categoria: 'Clásicos',
       anio: 1605,
       descripcion: 'La novela más importante de la literatura española y una de las mejores obras de la literatura universal.',
-      imagen: '📖',
+      imagen: 'assets/images/libros/Don.jpeg',
       disponible: true
     },
     {
@@ -35,7 +35,7 @@ export class LibrosComponent {
       categoria: 'Realismo Mágico',
       anio: 1967,
       descripcion: 'Un viaje a través de Macondo, un pueblo mágico y lleno de misterios donde viven los Buendía.',
-      imagen: '✨',
+      imagen: 'assets/images/libros/CienS.jpeg',
       disponible: true
     },
     {
@@ -45,7 +45,7 @@ export class LibrosComponent {
       categoria: 'Aventura',
       anio: 1605,
       descripcion: 'Las aventuras del ingenioso hidalgo Don Quijote y su escudero Sancho Panza.',
-      imagen: '⚔️',
+      imagen: 'assets/images/libros/Don.jpeg',
       disponible: false
     },
     {
@@ -55,7 +55,7 @@ export class LibrosComponent {
       categoria: 'Ficción Política',
       anio: 1949,
       descripcion: 'Una distopía sobre un régimen totalitario de control absoluto.',
-      imagen: '👁️',
+      imagen: 'assets/images/libros/1984.jpeg',
       disponible: true
     },
     {
@@ -65,7 +65,7 @@ export class LibrosComponent {
       categoria: 'Romance',
       anio: 1813,
       descripcion: 'La historia de Elizabeth Bennet y el orgulloso Mr. Darcy en la sociedad inglesa.',
-      imagen: '💕',
+      imagen: 'assets/images/libros/jyp.jpeg',
       disponible: true
     },
     {
@@ -75,7 +75,7 @@ export class LibrosComponent {
       categoria: 'Fantasía',
       anio: 1937,
       descripcion: 'La aventura de Bilbo Bolsón en la Tierra Media.',
-      imagen: '🐉',
+      imagen: 'assets/images/libros/hobbit-book.jpeg',
       disponible: true
     }
   ];

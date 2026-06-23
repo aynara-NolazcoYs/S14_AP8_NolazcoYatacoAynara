@@ -21,7 +21,9 @@
 
   <div class="libros-grid">
     <div *ngFor="let libro of libros" class="libro-card" [ngClass]="obtenerClaseDisponibilidad(libro.disponible)">
-      <div class="libro-imagen">{{ libro.imagen }}</div>
+      <div class="libro-imagen">
+        <img [src]="libro.imagen" [alt]="libro.titulo" />
+      </div>
       <div class="libro-info">
         <h2 class="libro-titulo">{{ libro.titulo }}</h2>
         <p class="libro-autor">por {{ libro.autor }}</p>
